@@ -1,0 +1,75 @@
+/* CSS Foodmap */
+
+* {
+	margin:0;
+	padding:0;
+	font-family: 'Quicksand', sans-serif;
+}
+
+body{
+	background-color: #000;
+	color: #fff;
+}
+
+/*Splash*/
+.inicio{
+	background-color: #000;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.foodmap{
+	color: #CA7533;
+	text-align: center;
+	padding-top: 30vh;
+	font-size: 450%;
+}
+
+/*título*/
+h1{
+	color: #CA7533;
+	text-align: center;
+	font-size: 400%; /*porcentaje??*/
+}
+
+hr{
+	margin-top: 10px;
+	height: 3px;
+}
+
+#map{
+	width: 100%;
+/*falta borde container*/
+	margin-top: 30px;
+}
+
+h5{
+	font-size: 30px;
+	text-align: center;
+	color: #CA7533;
+}
+
+#search button{
+	margin: 2px 0 0 0;
+	box-shadow: none;
+	padding: 6px;
+}
+
+/*fotos genéricas*/
+#default{
+	padding-bottom: 5%;
+}
+
+.gen{
+	border-radius: 6px;
+	margin-bottom: 10px;
+}
+
+/*clase fotos filtradas*/
+.restaurant{
+
+}
+
+
