@@ -5,109 +5,112 @@
 	<title>F O O D M A P</title>
 	<!-- Meta Viewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 	<!-- CSS Bootstrap -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<!-- CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 	<!-- Splash -->
-	<div class="container-fluid intro">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12 col-sm-12">
-				<div class="inicio">
-					<h1 class="text-center foodmap">Foodmap</h1>
+			<div class="col-xs-12 col-sm-12 intro">
+				<h1 class="text-center foodmap">Foodmap</h1>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Título Foodmap + hr -->
+	<header class="text-center">
+		<h1>Foodmap</h1>
+		<hr>
+	</header>
+
+	<!-- Mapa -->
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6658.879083504409!2d-70.64431961855468!3d-33.43785332777225!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1513178925048" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<!-- título foodmap -->
-	<div class="container-fluid title" style="display:none">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12">
-				<h1>Foodmap</h1>
-				<hr class="container-fluid">
+	<!-- Filtros -->
+	<section class="filtros">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<form id="search">
+						<div class="options">
+							<select id="categorias" class="form-control" onChange="mostrar(this.value);">
+								<option value="" disabled selected>Filtrar</option>
+								<option value="cerca">Más cercanos</option>
+								<option value="barato">Más económicos</option>
+								<option value="deli">Delivery</option>
+							</select>
+						</div>
+					</form>
+				</div>
 			</div>
+		</div>
+	</section>
+
+	<!-- imágenes por defecto-->
+	<div class="container-fluid" id="default">
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 generico1" id="food1"><img class="gen img-responsive" src="assets/img/ceviche.jpg" alt="ceviche"></div>
+			<div class="col-xs-6 col-sm-6 generico1" id="food2"><img class="gen img-responsive" src="assets/img/chinese.jpg" alt="comida china"></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-4 col-sm-4 generico2" id="food3"><img class="gen img-responsive" src="assets/img/paella.jpeg" alt="paella"></div>
+			<div class="col-xs-4 col-sm-4 generico2" id="food4"><img class="gen img-responsive" src="assets/img/pizza.jpg" alt="pizza"></div>
+			<div class="col-xs-4 col-sm-4 generico2" id="food5"><img class="gen img-responsive" src="assets/img/tacos.jpg" alt="tacos"></div>
 		</div>
 	</div>
 
-	<!-- mapa -->
-	<div class="container-fluid">
+<!-- filtro 1: value="cerca" -->
+<div class="container-fluid results" id="cercania">
+	<div class="row">
+		<div class="col-xs-6 col-sm-6" id="near1" ><img class="restaurant img-responsive" src="assets/img/r_chino_1.jpg" alt="Los Chinos Ricos"></div>
+		<div class="col-xs-6 col-sm-6" id="near2"><img class="restaurant img-responsive" src="assets/img/r_mar_2.jpg" alt="La Mar"></div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6 col-sm-6" id="near3" ><img class="restaurant img-responsive" src="assets/img/r_pizzas.png" alt="La Pizza Rica"></div>
+		<div class="col-xs-6 col-sm-6" id="near3"><img class="restaurant img-responsive" src="assets/img/r_mexicana_1.jpg" alt="Tequila"></div>
+	</div>
+</div>
+
+	<!-- filtro 2: value="barato" -->
+	<div class="container-fluid results" id="precio">
 		<div class="row">
-			<div class="col-xs-12 col-sm-12">
-				<h1>Foodmap</h1>
-				<hr>
-			</div>
-			<div class="col-xs-12 col-sm-12">
-				<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6658.879083504409!2d-70.64431961855468!3d-33.43785332777225!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1513178925048" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-				<h5>Comida cerca de ti</h5>
-			</div>
+			<div class="col-xs-6 col-sm-6" id="price1"><img class="restaurant img-responsive" src="assets/img/r_mexicana_2.jpg" alt=""></div>
+			<div class="col-xs-6 col-sm-6" id="price2"><img class="restaurant img-responsive" src="assets/img/r_mar_3.png" alt=""></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-6" id="price3"><img class="restaurant img-responsive" src="assets/img/r_chino_2.jpg" alt=""></div>
+			<div class="col-xs-6 col-sm-6" id="price4"><img class="restaurant img-responsive" src="assets/img/r_peruano_1.jpg" alt=""></div>
 		</div>
 	</div>
 
-	<!-- filtros -->
-	<div class="container filtrando">
+	<!-- filtro 3: value="deli" -->
+	<div class="container-fluid results" id="delivery">
 		<div class="row">
-			<div class="col-xs-12 col-sm-12">
-				<form id="search">
-					<div class="form-group"> <!-- form group -->
-						<select id="categorias" class="form-control" onChange="mostrar(this.value);">
-							<option value="" disabled selected>Filtrar</option>
-							<option value="cerca">Más cercanos</option>
-							<option value="barato">Más económicos</option>
-							<option value="deli">Delivery</option>
-						</select>
-					</div>
-				</form>
-			</div>
+			<div class="col-xs-6 col-sm-6" id="delivery1"><img class="restaurant img-responsive" src="assets/img/r_arabe.jpg" alt=""></div>
+			<div class="col-xs-6 col-sm-6" id="delivery2"><img class="restaurant img-responsive" src="assets/img/r_sushi.jpg" alt=""></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-sm-6" id="delivery3"><img class="restaurant img-responsive" src="assets/img/r_sandwich.jpg" alt=""></div>
+			<div class="col-xs-6 col-sm-6" id="delivery4"><img class="restaurant img-responsive" src="assets/img/r_paella.jpg" alt=""></div>
 		</div>
 	</div>
-
-<!-- imágenes por defecto-->
-<div class="container-fluid" id="default">
-	<div class="row">
-		<div class="col-xs-6 col-sm-6 generico1" id="food1"><img class="gen img-responsive" src="assets/img/ceviche.jpg" alt="ceviche"></div>
-		<div class="col-xs-6 col-sm-6 generico1" id="food2"><img class="gen img-responsive" src="assets/img/chinese.jpg" alt="comida china"></div>
-	</div>
-	<div class="row">
-		<div class="col-xs-4 col-sm-4 generico2" id="food3"><img class="gen img-responsive" src="assets/img/paella.jpeg" alt="paella"></div>
-		<div class="col-xs-4 col-sm-4 generico2" id="food4"><img class="gen img-responsive" src="assets/img/pizza.jpg" alt="pizza"></div>
-		<div class="col-xs-4 col-sm-4 generico2" id="food5"><img class="gen img-responsive" src="assets/img/tacos.jpg" alt="tacos"></div>
-	</div>
-</div>
-
-
-
-
-<!-- filtro 2: value="barato" -->
-<div class="container-fluid results" id="precio">
-	<div class="row">
-		<div class="col-xs-6 col-sm-6" id="price1"><img class="restaurant img-responsive" src="assets/img/r_mexicana_2.jpg" alt=""></div>
-		<div class="col-xs-6 col-sm-6" id="price2"><img class="restaurant img-responsive" src="assets/img/r_mar_3.png" alt=""></div>
-	</div>
-	<div class="row">
-		<div class="col-xs-6 col-sm-6" id="price3"><img class="restaurant img-responsive" src="assets/img/r_chino_2.jpg" alt=""></div>
-		<div class="col-xs-6 col-sm-6" id="price4"><img class="restaurant img-responsive" src="assets/img/r_peruano_1.jpg" alt=""></div>
-	</div>
-</div>
-
-<!-- filtro 3: value="deli" -->
-<div class="container-fluid results" id="delivery">
-	<div class="row">
-		<div class="col-xs-6 col-sm-6" id="delivery1"><img class="restaurant img-responsive" src="assets/img/r_arabe.jpg" alt=""></div>
-		<div class="col-xs-6 col-sm-6" id="delivery2"><img class="restaurant img-responsive" src="assets/img/r_sushi.jpg" alt=""></div>
-	</div>
-	<div class="row">
-		<div class="col-xs-6 col-sm-6" id="delivery3"><img class="restaurant img-responsive" src="assets/img/r_sandwich.jpg" alt=""></div>
-		<div class="col-xs-6 col-sm-6" id="delivery4"><img class="restaurant img-responsive" src="assets/img/r_paella.jpg" alt=""></div>
-	</div>
-</div>
 
 
 <!-- jQuery -->
