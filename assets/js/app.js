@@ -12,6 +12,7 @@ $(document).ready(function(){
 
 
 /* filtros */
+/*
 var cont = $('#default');
     
     $('#categorias').on('change', function() {

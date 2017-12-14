@@ -43,25 +43,27 @@
 		</div>
 	</section>
 
-	<!-- Filtros -->
-	<section class="filtros">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12">
-					<form id="search">
-						<div class="options">
-							<select id="categorias" class="form-control" onChange="mostrar(this.value);">
-								<option value="" disabled selected>Filtrar</option>
-								<option value="cerca">Más cercanos</option>
-								<option value="barato">Más económicos</option>
-								<option value="deli">Delivery</option>
-							</select>
-						</div>
-					</form>
-				</div>
+<!-- Filtros -->
+<section>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<h3 class="text-center">Comida cerca de ti</h3>
 			</div>
 		</div>
-	</section>
+		<div class="row">
+			<div class="col-xs-8 col-sm-8">
+				<select id="categorias" class="form-control" onChange="filter(this.value);">
+					<option value="" disabled selected>Filtrar restaurantes</option>
+					<option type="button" value="best">Mejor valorados</option>
+					<option type="button" value="express">Al paso</option>
+					<option type="button" value="cafes">Cafeterías</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</section>
+
 
 	<!-- imágenes por defecto-->
 	<div class="container-fluid" id="default">
